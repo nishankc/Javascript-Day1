@@ -1,8 +1,8 @@
 var event1 = document.getElementById("button1");
 event1.addEventListener("click", randomNumberGame, false);
 
-//var randomNumber = Math.round(Math.random()*100);
-var randomNumber = 10;
+var randomNumber = Math.round(Math.random()*100);
+//var randomNumber = 10;
 var count = 0;
 
 
