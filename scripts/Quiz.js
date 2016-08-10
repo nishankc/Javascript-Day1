@@ -18,12 +18,13 @@ function createQuestion(question, answer1, answer2, answer3, answer4, answer) {
 var questionList = [];
 
 //create the questions
-var question1 = new createQuestion("Question 1", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 1);
-var question2 = new createQuestion("Question 2", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 2);
-var question3 = new createQuestion("Question 3", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 3);
-var question4 = new createQuestion("Question 4", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 4);
-var question5 = new createQuestion("Question 5", "Answer 1", "Answer 2", "Answer 3", "Answer 4", 2);
+var question1 = new createQuestion("Which Football Team did Steven Gerrard Play for?", "Arsenal", "Manchester United", "Liverpool", "Everton", 3);
+var question2 = new createQuestion("Who bought Suarez from Liverpool?", "Barcalona", "Manchester City", "PSG", "Real Madrid", 1);
+var question3 = new createQuestion("When did Liverpool last win the Champion League", "2004", "2005", "2006", "2007", 2);
+var question4 = new createQuestion("Who is the current manager of Liverpool FC?", "Rafa Benitez", "Arsene Wenger", "Antonio Conte", "Jurgen Klopp", 4);
+var question5 = new createQuestion("How many times have Liverpool won the European Cup/Champions League", "Three", "Seven", "Six", "Five", 4);
 
+//add the questions to the array
 questionList.push(question1);
 questionList.push(question2);
 questionList.push(question3);
@@ -32,12 +33,13 @@ questionList.push(question5);
 
 
 
-
+//create arrays to find the div id tags on the html page
 var questIDTag = ["q1", "q2", "q3", "q4", "q5"];
 var ansIDTag = ["a1", "a2", "a3", "a4", "a5"];
 var ansBox = ["ans1", "ans2", "ans3", "ans4", "ans5"];
 var result = ["result1", "result2", "result3", "result4", "result5"];
 
+//loop to display the questions on the page
 for(var i = 0; i < questionList.length; i++){
     
     document.getElementById(questIDTag[i]).innerHTML += questionList[i].question + "<br/>"; 
@@ -48,22 +50,27 @@ for(var i = 0; i < questionList.length; i++){
     
 }
 
+//function to check answers once they have been entered and output the result
 function checkAnswers(){
     
+    //set counters
     countCorrect = 0;
     countWrong = 0;
     var userAns = "";
-    
+   
+    //loop to check if the answer is right, prints out if they answer the question correct or incorrect
     for(var i = 0; i < questionList.length; i++){
         
         userAns = parseInt(document.getElementById(ansBox[i]).value);
         
         if(userAns != questionList[i].answer){
             
-            //document.getElementById(result[i]).innerHTML += "Incorrect";
+            document.getElementById(result[i]).innerHTML = "";
+            document.getElementById(result[i]).innerHTML += "Incorrect";
             countWrong++;
         }else{
-            //document.getElementById(result[i]).innerHTML += "Correct";
+            document.getElementById(result[i]).innerHTML = "";
+            document.getElementById(result[i]).innerHTML += "Correct";
             countCorrect++;
         }
         
