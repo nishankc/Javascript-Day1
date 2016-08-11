@@ -13,6 +13,8 @@ function displayString(){
     var newString = userString.replace(userString.charAt(indexInput),charInput);
     
     document.getElementById("output").innerHTML = newString;
+    
+    alert(userString.charAt(indexInput));
    
  
 }

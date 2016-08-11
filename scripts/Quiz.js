@@ -1,3 +1,9 @@
+/*$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top'
+    });
+});*/
+
 //event listener
 var event1 = document.getElementById("button");
 event1.addEventListener("click",checkAnswers,false)
@@ -24,11 +30,11 @@ var question3 = new createQuestion("When did Liverpool last win the Champion Lea
 var question4 = new createQuestion("Who is the current manager of Liverpool FC?", "Rafa Benitez", "Arsene Wenger", "Antonio Conte", "Jurgen Klopp", 4);
 var question5 = new createQuestion("How many times have Liverpool won the European Cup/Champions League", "Three", "Seven", "Six", "Five", 4);
 
-<<<<<<< HEAD
-// add the questions to the array
-=======
+
+
+
 //add the questions to the array
->>>>>>> origin/master
+
 questionList.push(question1);
 questionList.push(question2);
 questionList.push(question3);
@@ -36,9 +42,6 @@ questionList.push(question4);
 questionList.push(question5);
 
 
-<<<<<<< HEAD
-//loop 
-=======
 
 //create arrays to find the div id tags on the html page
 var questIDTag = ["q1", "q2", "q3", "q4", "q5"];
@@ -47,7 +50,7 @@ var ansBox = ["ans1", "ans2", "ans3", "ans4", "ans5"];
 var result = ["result1", "result2", "result3", "result4", "result5"];
 
 //loop to display the questions on the page
->>>>>>> origin/master
+
 for(var i = 0; i < questionList.length; i++){
     
     document.getElementById(questIDTag[i]).innerHTML += questionList[i].question + "<br/>"; 
@@ -58,6 +61,13 @@ for(var i = 0; i < questionList.length; i++){
     
 }
 
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover({
+        placement : 'top',
+        trigger : 'hover'
+    });
+});
 //function to check answers once they have been entered and output the result
 function checkAnswers(){
     
@@ -74,16 +84,22 @@ function checkAnswers(){
         if(userAns != questionList[i].answer){
             
             document.getElementById(result[i]).innerHTML = "";
-            document.getElementById(result[i]).innerHTML += "Incorrect";
+            document.getElementById(result[i]).innerHTML += "<p class=" + "text-danger" + ">Incorrect</p>";
             countWrong++;
         }else{
             document.getElementById(result[i]).innerHTML = "";
-            document.getElementById(result[i]).innerHTML += "Correct";
+            document.getElementById(result[i]).innerHTML += "<p class=" + "text-success" + ">Correct</p>";
             countCorrect++;
         }
         
     }
     
-    document.getElementById("display").innerHTML = "Number of Correct Answers: " + countCorrect + "<br/>Number of Incorrect Answers: " + countWrong;
+    document.getElementById("display").innerHTML = "<p class=" + "text-success" + ">Number of Correct Answers:" + countCorrect +  "</p><p class=" + "text-danger" + ">Number of Incorrect Answers:" + countWrong;
+        
+        
+        
+        
     
 }
+
+//"Number of Correct Answers: " + countCorrect + "<br/>Number of Incorrect Answers: " + countWrong;

@@ -1,46 +1,191 @@
 <!DOCTYPE html>
 <html>
-    <head>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiz</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+    h1 {
+	   font-family: "Days One";
+	   font-size: 40px;
+	   font-style: normal;
+	   font-variant: small-caps;
+	   font-weight: bold;
+	   line-height: 44px;
+       
+    } 
     
-       
+    .questiondisplay {
+       font-family: "Days One";
+	   font-size: 20px;
+	   font-style: normal;
+	   font-variant: small-caps;
+	   font-weight: bold;
+	   line-height: 20px;
         
-    <head>
-    <body>
+    }
+    
+    
+    
+</style>
+    
         
-        <h1>Quiz</h1>
+        <div class="row">
+            
+                <div class="col-xs-3"></div>
+                <div class="col-xs-5">
+                <div class="page-header">
+                <nav class="navbar navbar-default navbar-fixed-top"><h1>Quiz <small class="col-xs-5">A small quiz on Liverpool FC</small></h1></nav>
+                </div>
+            </div>
+        </div>
         <br/>
         <br/>
         <br/>
-       
-       
-        <div id="q1"></div>
-        <div id="a1"></div>
-        <input type="text" id="ans1">
-        <div id="result1"></div>
-        <br/>
-        <div id="q2"></div>
-        <div id="a2"></div>
-        <input type="text" id="ans2">
-        <div id="result2"></div>
-        <br/>
-        <div id="q3"></div>
-        <div id="a3"></div>
-        <input type="text" id="ans3">
-        <div id="result3"></div>
-        <br/>
-        <div id="q4"></div>
-        <div id="a4"></div>
-        <input type="text" id="ans4">
-        <div id="result4"></div>
-        <br/>
-        <div id="q5"></div>
-        <div id="a5"></div>
-        <input type="text" id="ans5">
-        <div id="result5"></div>
-        <br/>
+       <body>
+       <form >
         
-        <button id="button">Click to check answers</button>
-        <div id="display"></div>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <b><div class="questiondisplay" id="q1" ></div></b>
+                    <div class="well" id="a1" ></div>
+                </div>
+                <div  class="col-xs-3">
+                    
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <select class="form-control input-sm" id="ans1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div id="result1"  ></div>
+                </div>
+            </div>
+            <br/>
+           <div class="row">
+               <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <b><div class="questiondisplay" id="q2" ></div></b>
+                    <div class="well" id="a2" ></div>
+                </div>
+                <div  class="col-xs-3">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <select class="form-control input-sm" id="ans2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div id="result2"  ></div>
+                </div>
+            </div>
+            <br/>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <b><div class="questiondisplay" id="q3" ></div></b>
+                    <div id="a3" class="well"></div>
+                </div>
+                <div  class="col-xs-3">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <select class="form-control input-sm" id="ans3">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div id="result3"  ></div>
+                </div>
+            </div>
+           <br/>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <b><div class="questiondisplay" id="q4" ></div></b>
+                    <div id="a4" class="well"></div>
+                </div>
+                <div  class="col-xs-3">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <select class="form-control input-sm" id="ans4">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div id="result4"  ></div>
+                </div>
+            </div>
+           <br/>
+            <div class="row">
+                <div class="col-xs-3"></div>
+                <div class="col-xs-3">
+                    <b><div class="questiondisplay" id="q5" ></div></b>
+                    <div id="a5" class="well" ></div>
+                </div>
+                <div  class="col-xs-3">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <select class="form-control input-sm" id="ans5">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    <div id="result5"  ></div>
+                </div>
+            </div>
+           
+        </form>
+        
+        <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3">
+                
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="btn btn-lg btn-primary" data-toggle="modal">Sumbit</a>
+    
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Confirmation</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Do you want to submit these answers?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" id="button" class="btn btn-primary" data-toggle="popover" title="Submit the Quiz" data-content="Once clicked your results will be displayed" data-dismiss="modal">Click to check answers</button>
+                </div>
+            </div>
+        </div>
+    </div>
+            </div>
+
+                <div id="display"></div>
+        </div>
         <br/>
         <br/>
        
