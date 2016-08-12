@@ -1,0 +1,42 @@
+
+input[type="text"] {
+    display: block;
+    margin : 0 auto;
+}
+
+.buttonholder {
+    text-align: center;
+}
+
+.well {
+    border-style: solid;
+    border-width: medium;
+    border-color: chocolate;
+}
+
+
+#title{
+    text-align: center;
+    color: chocolate;
+}
+
+#subtitle{
+    text-align: center;
+    color: crimson;
+}
+
+.blink {
+  
+    color: red;
+    -webkit-animation-name: example; 
+    -webkit-animation-duration: 4s; 
+    animation-name: blinker;
+    animation-duration: 4s;
+}
+
+@-webkit-keyframes blinker {
+    0%   {color: red;}
+    25%  {color: yellow;}
+    50%  {color: blue;}
+    100% {color: green;}
+}
